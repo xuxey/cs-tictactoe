@@ -10,7 +10,7 @@ function useForceUpdate(){
 const App = () => {
     const [copied, setCopied] = useState()
     const forceUpdate = useForceUpdate();
-    const [board, setBoard] = useState({
+    const initialBoard = {
         0: '-',
         1: '-',
         2: '-',
@@ -20,7 +20,8 @@ const App = () => {
         6: '-',
         7: '-',
         8: '-',
-    });
+    }
+    const [board, setBoard] = useState(initialBoard);
     const handleClick = (e) => {
         e.preventDefault();
         let newBoard = board;
@@ -73,7 +74,10 @@ const App = () => {
             </div>
             <div>
                 <h3>{makeString()}</h3>
-                <a className="cursor-pointer ml-1" onClick={()=> copyClip(makeString())} >Copy</a>
+                <div className="btn-group" role="group" aria-label="Basic example">
+                <button className="btn btn-primary" onClick={()=> copyClip(makeString())} >Copy</button>
+                <button className="btn btn-dark" onClick={() => setBoard(initialBoard)}>Reset</button>
+                </div>
             </div>
         </div>
     );
