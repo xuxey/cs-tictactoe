@@ -76,7 +76,7 @@ const App = () => {
                 <h3>{makeString()}</h3>
                 <div className="btn-group" role="group" aria-label="Basic example">
                 <button className="btn btn-primary" onClick={()=> copyClip(makeString())} >Copy</button>
-                <button className="btn btn-dark" onClick={() => setBoard(initialBoard)}>Reset</button>
+                <button className="btn btn-info" onClick={() => setBoard(initialBoard)}>Reset</button>
                 </div>
             </div>
         </div>
